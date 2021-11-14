@@ -8,7 +8,7 @@ from colorama import Fore, init
 from progress.bar import IncrementalBar
 init(autoreset=True)
 
-IP = '192.168.88.15' #Свой айпи
+IP = '192.168.88.13' #Свой айпи
 PORT = 8080 #не трогать
 
 hasher = hashlib.new('sha512_256')

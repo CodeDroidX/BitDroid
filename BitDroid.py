@@ -8,7 +8,7 @@ from colorama import Fore, init
 from progress.bar import IncrementalBar
 init(autoreset=True)
 
-IP = '192.168.88.13' #Свой айпи
+IP = '192.168.88.12' #Свой айпи
 PORT = 8080 #не трогать
 
 hasher = hashlib.new('sha512_256')
@@ -37,8 +37,11 @@ if role=="2":
     sock.bind((IP, PORT))
     print(Fore.CYAN+"Server Started!")
     #print(Fore.GREEN+"Your Token is",token)
-    print(Fore.GREEN+"Your token copied!")
-    pyperclip.copy(token)
+    try:
+        pyperclip.copy(token)
+        print(Fore.GREEN+"Your token copied!")
+    except:
+        print(Fore.GREEN+"Your Token is",token)
     sock.listen()
     sock, addr = sock.accept()
     print(Fore.CYAN+str(addr),'connected!')
